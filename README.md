@@ -1,3 +1,8 @@
+# Download
+```
+git clone https://github.com/uoe-agents/uoe-rl2023-coursework
+```
+
 # Install dependencies using:
 ```console
     $ cd uoe-rl2023-coursework
