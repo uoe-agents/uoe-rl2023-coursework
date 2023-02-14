@@ -111,7 +111,7 @@ class QLearningAgent(Agent):
     def schedule_hyperparameters(self, timestep: int, max_timestep: int):
         """Updates the hyperparameters
 
-        **YOU MUST IMPLEMENT THIS FUNCTION FOR Q2**
+        **DO NOT CHANGE THE PROVIDED SCHEDULING WHEN TESTING PROVIDED HYPERPARAMETER PROFILES IN Q2**
 
         This function is called before every episode and allows you to schedule your
         hyperparameters.
@@ -119,8 +119,7 @@ class QLearningAgent(Agent):
         :param timestep (int): current timestep at the beginning of the episode
         :param max_timestep (int): maximum timesteps that the training loop will run for
         """
-        ### PUT YOUR CODE HERE ###
-        raise NotImplementedError("Needed for Q2")
+        self.epsilon = 1.0 - (min(1.0, timestep / (0.20 * max_timestep))) * 0.99
 
 
 class MonteCarloAgent(Agent):
@@ -161,7 +160,7 @@ class MonteCarloAgent(Agent):
     def schedule_hyperparameters(self, timestep: int, max_timestep: int):
         """Updates the hyperparameters
 
-        **YOU MUST IMPLEMENT THIS FUNCTION FOR Q2**
+        **DO NOT CHANGE THE PROVIDED SCHEDULING WHEN TESTING PROVIDED HYPERPARAMETER PROFILES IN Q2**
 
         This function is called before every episode and allows you to schedule your
         hyperparameters.
@@ -169,5 +168,4 @@ class MonteCarloAgent(Agent):
         :param timestep (int): current timestep at the beginning of the episode
         :param max_timestep (int): maximum timesteps that the training loop will run for
         """
-        ### PUT YOUR CODE HERE ###
-        raise NotImplementedError("Needed for Q2")
+        self.epsilon = 1.0 - (min(1.0, timestep / (0.9 * max_timestep))) * 0.8
