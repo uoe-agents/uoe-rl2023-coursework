@@ -16,6 +16,7 @@ setup(
         "pyglet>=1.3",
         "matplotlib>=3.1",
         "pytest>=5.3",
+        "ordered_set>=4.1",
     ],
     extras_require={"test": ["pytest"]},
     include_package_data=True,

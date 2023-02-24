@@ -1,6 +1,7 @@
 import numpy as np
 from collections import namedtuple
 from typing import List, Hashable
+from ordered_set import OrderedSet
 
 Transition = namedtuple(
     "Transition", ["state", "action", "next_state", "prob", "reward"]
@@ -17,9 +18,9 @@ class MDP:
     Allows for easy creation and generation of numpy arrays for faster computation
 
     :attr transitions (List[Transition]): list of all transitions
-    :attr states (Set[State]): set of all states
-    :attr actions (Set[Action]): set of all actions
-    :attr terminal_states (Set[State]): set of all terminal states (NOT USED)
+    :attr states (OrderedSet[State]): set of all states
+    :attr actions (OrderedSet[Action]): set of all actions
+    :attr terminal_states (OrderedSet[State]): set of all terminal states (NOT USED)
     :attr init_state (State): initial state (NOT USED)
     :attr max_episode_length (int): maximum length of an episode (NOT USED)
     :attr _state_dict (Dict[State, int]): mapping from states to state indeces
@@ -48,9 +49,9 @@ class MDP:
         Initialise an empty (!) MDP
         """
         self.transitions = []
-        self.states = set()
-        self.actions = set()
-        self.terminal_states = set()
+        self.states = OrderedSet()
+        self.actions = OrderedSet()
+        self.terminal_states = OrderedSet()
 
         self.init_state = None
         self.max_episode_length = None
@@ -134,9 +135,9 @@ class MDP:
     def _decompile(self):
         """Resets states and actions to modifiable sets and toggles the compiled flag off
         """
-        self.states = set(self.states)
-        self.actions = set(self.actions)
-        self.terminal_states = set(self.terminal_states)
+        self.states = OrderedSet(self.states)
+        self.actions = OrderedSet(self.actions)
+        self.terminal_states = OrderedSet(self.terminal_states)
         self._state_dict = {}
         self._action_dict = {}
 
