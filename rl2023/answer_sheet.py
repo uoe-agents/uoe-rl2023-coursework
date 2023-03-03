@@ -53,7 +53,7 @@ def question2_4() -> str:
     by [Q-learning / First-Visit Monte Carlo] when compared to the other algorithm.
     return: answer (str): your answer as a string (100 words max)
     """
-    answer = ""  # TYPE YOUR ANSWER HERE (100 words max)
+    answer = "fejofse;ioj kfpoewofe"  # TYPE YOUR ANSWER HERE (100 words max)
     return answer
 
 
@@ -91,7 +91,7 @@ def question3_2() -> str:
 def question3_3() -> str:
     """
     (Multiple choice question):
-    When training DQN using an exponential decay strategy for epsilon, which exploration fraction achieves the highest
+    When training DQN using an exponential decay strategy for epsilon, which epsilon decay achieves the highest
     mean returns at the end of training?
     a) 1.0
     b) 0.75
