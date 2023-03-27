@@ -144,7 +144,7 @@ class DDPG(Agent):
         """
 
         if dir_path is None:
-            dir_path, _ = os.path.split(os.path.abspath(__file__))
+            dir_path = os.getcwd()
         save_path = os.path.join(dir_path, filename)
         checkpoint = torch.load(save_path)
         for k, v in self.saveables.items():
